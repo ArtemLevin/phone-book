@@ -77,7 +77,8 @@ def phone_book(book):
             answer = input(f"Do you really want to delete contact {contact_to_delete}? (y/n) ")
             if answer == 'y':
                 del book[contact_to_delete]
-                print(f"Contact '{contact_to_delete}' have been deleted.  What do you want to do next?")
+                print(f"Contact '{contact_to_delete}' have been deleted.  "
+                      f"What do you want to do next?")
                 write_in(book)
             elif answer == 'n':
                 print(f"Contact '{contact_to_delete}' have not been deleted.  What do you want to do next?")
@@ -99,9 +100,7 @@ def phone_book(book):
             elif attribute == 'info':
                 new_info = input("Enter new info of the contact ")
                 book[contact_to_modify][0] = new_info
-            with open('book.json', 'w', encoding="UTF-8") as some_file:
-                some_content = json.dumps(book)
-                some_file.write(some_content)
+            write_in(book)
             print('\n', f"New contact {contact_to_modify} is modified. What do you want to do next? ")
             phone_book(book)
 
@@ -113,8 +112,7 @@ def phone_book(book):
         answer = input("Do you want to leave? (y/n) ")
         if answer == 'y':
             return -1
-        elif answer == 'n':
-            phone_book(book)
+        phone_book(book)
 
 
 phone_book(read_out())
