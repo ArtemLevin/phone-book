@@ -59,8 +59,7 @@ def phone_book(book):
         new_name = input("Enter the name of the new contact ")
         new_number = input("Enter the number of the new contact ")
         new_info = input("Enter the info about the new contact ")
-        new_list = [new_name] + [new_number] + [new_info]
-        book[new_name] = new_list
+        book[new_name] = [new_name] + [new_number] + [new_info]
         answer = input("Do you want to save changes? (y/n) ")
         if answer == 'y':
             print('\n', f"New contact '{new_name}' is added. What do you want to do next? ")
