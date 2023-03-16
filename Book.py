@@ -95,7 +95,7 @@ def phone_book(book):
                 book[contact_to_modify][1] = new_attribute_num
             elif attribute == 'info':
                 new_info = input("Enter new info of the contact ")
-                book[contact_to_modify][0] = new_info
+                book[contact_to_modify][2] = new_info
             write_in(book)
             print('\n', f"New contact {contact_to_modify} is modified. What do you want to do next? ")
             phone_book(book)
